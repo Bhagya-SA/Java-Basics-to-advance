@@ -1,0 +1,47 @@
+// OOP/InheritanceExample.java
+
+// Abstraction: Abstract class
+abstract class Animal {
+    abstract void sound(); // Abstract method
+    void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}
+
+// Inheritance and method overriding
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Interface
+interface Pet {
+    void play();
+}
+
+class Cat extends Animal implements Pet {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Cat is playing with a ball");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();
+        dog.sleep();
+
+        Cat cat = new Cat();
+        cat.sound();
+        cat.sleep();
+        cat.play();
+    }
+}
