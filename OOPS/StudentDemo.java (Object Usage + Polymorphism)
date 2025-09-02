@@ -1,0 +1,32 @@
+// OOP/StudentDemo.java
+class Student extends Person {
+    private String course;
+
+    // Constructor
+    public Student(String name, int age, String course) {
+        super(name, age); // call Person constructor
+        this.course = course;
+    }
+
+    // Overriding display method (Polymorphism - Runtime)
+    @Override
+    public void display() {
+        System.out.println("Name: " + getName() + ", Age: " + getAge() + ", Course: " + course);
+    }
+}
+
+public class StudentDemo {
+    public static void main(String[] args) {
+        // Creating object of Person
+        Person person1 = new Person("Alice", 25);
+        person1.display();
+
+        // Creating object of Student
+        Student student1 = new Student("Bob", 22, "Computer Science");
+        student1.display();
+
+        // Polymorphism Example
+        Person p = new Student("Charlie", 21, "Mathematics");
+        p.display(); // Calls overridden method in Student
+    }
+}
